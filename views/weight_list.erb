@@ -1,0 +1,7 @@
+<h3>Choose a Weight Category to Search</h3>
+
+  <% Weight.all.each do |item| %>
+  <p><input type="radio" name="weight" value="<% "#{item.id}" %>"><%= "\s#{item.id}. #{item.weight}" %></p>
+  <% end %>
+
+<p><input type="submit"></p>
