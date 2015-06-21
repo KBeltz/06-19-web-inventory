@@ -1,5 +1,7 @@
-<p>View Inventory</p>
+<p><h3>View Inventory</h3></p>
 
-<%= Driver.list_yarns %>
+<% Yarn.all.each do |item| %>
+  <p><%= "#{item.id}. #{item.brand} #{item.name}: #{item.color} #{item.fiber}, $#{item.price} #{item.skeins} skeins" %></p>
+<% end %>
+<p><a href = "/home">Return To Main Menu</a><p>
 
-(listing an array of hash marks, one for each inventory item, instead of the actual inventory)

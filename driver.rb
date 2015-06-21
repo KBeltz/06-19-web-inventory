@@ -2,12 +2,6 @@ require_relative "database_methods.rb"
 require_relative "database_instance_methods.rb"
 
 module Driver
-  
-  def self.list_yarns
-    Yarn.all.each do |item|
-      puts "#{item.id}. #{item.brand} #{item.name}: #{item.color} #{item.fiber}, $#{item.price} #{item.skeins} skeins"
-    end
-  end # list yarns
 
   def self.list_weights
     Weight.all.each do |item|

@@ -108,6 +108,11 @@ get "/edit_yarn_price" do
   # student.save
 end
 
+get "/location_list" do
+  erb :"location_list"
+end
+
+
 
 
   
