@@ -26,14 +26,12 @@
 
 <h3>Delete Store Location</h3>
 
-<form action= "/delete_location">
-  <p><h4>Choose a location to delete:</h4><select name="id"></p>
+  <p><h4>Choose a location to delete:</h4></p>
   <% StoreLocation.all.each do |item| %>
-      <option value="<%= item.id %>"><%= item.store_location %></option>
-      <% end %>
-    </select>
-  <p> <input type="submit" value="delete location"></p>
-</form>
+    <ul>
+      <li><a href ="/delete_location/<%= item.id %>"><%= item.store_location %></li></a>
+    </ul>
+  <% end %>
 
 <br><br>
 <a href = "/home">Return To Main Menu</a>

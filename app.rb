@@ -128,6 +128,21 @@ get "/delete_yarn/:x" do
   erb :"success"
 end
 
+get "/delete_location/:x" do
+  @specific_location = StoreLocation.find(params["x"])
+  @specific_location.delete_row
+  
+  erb :"success"
+end
+
+
+get "/delete_weight/:x" do
+  @weight_category = Weight.find(params["x"])
+  @weight_category.delete_row
+  
+  erb :"success"
+end
+
 #########################################################################
 # TODO items below
 #########################################################################
@@ -142,17 +157,6 @@ get "/edit_item" do
   erb :"success"
 end
 
-get "/delete_location" do
-  #stuff
-  #TODO
-  erb :"success"
-end
-
-get "/delete_weight" do
-  #stuff
-  #TODO
-  erb :"success"
-end
 
 
 

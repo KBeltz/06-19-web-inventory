@@ -26,14 +26,12 @@
 
 <h3>Delete Weight Category</h3>
 
-<form action= "/delete_weight">
-  <p><h4>Choose a weight category to delete:</h4><select name="id"></p>
+  <p><h4>Choose a weight category to delete:</h4></p>
   <% Weight.all.each do |item| %>
-      <option value="<%= item.id %>"><%= item.weight %></option>
-      <% end %>
-    </select>
-  <p> <input type="submit" value="delete category"></p>
-</form>
+    <ul>
+      <li><a href ="/delete_weight/<%= item.id %>"><%= item.weight %></li></a>
+    </ul>
+  <% end %>
 
 <br><br>
 <a href = "/home">Return To Main Menu</a>
