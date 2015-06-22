@@ -87,6 +87,24 @@ get "/add_yarn" do
   erb :"success"
 end
 
+# Gets parameters from manage_weight_form.
+#
+# Adds product to weights table
+get "/add_weight" do
+  Weight.add("weight" => params["weight"])
+  
+  erb :"success"
+end
+
+# Gets parameters from manage_location_form.
+#
+# Adds product to locations table
+get "/add_store_location" do
+  StoreLocation.add("store_location" => params["store_location"])
+  
+  erb :"success"
+end
+
 ###########################################################################
 
 
