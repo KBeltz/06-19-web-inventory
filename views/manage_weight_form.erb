@@ -1,6 +1,6 @@
 <h3>Edit Weight Category</h3>
 
-<form action="/edit_save">
+<form action="/edit_item">
   <p><h4>Choose a weight category to edit:</h4><select name="id"></p>
     <% Weight.all.each do |item| %>
     <option value="<%= item.id %>"> <%= item.weight %></option>

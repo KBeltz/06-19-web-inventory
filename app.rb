@@ -105,20 +105,50 @@ get "/add_store_location" do
   erb :"success"
 end
 
-###########################################################################
+#########################################################################
+# TODO items below
+#########################################################################
+
+# Gets parameters from edit_inventory_item_form, manage_location_form, or 
+# the manage_weight_form
 #
-#
-# get "/search_by_location" do
-#   erb :"search_by_location"
-#   # doesn't quite work. Returns a blank screen.
-# end
-#
-# get "/delete_yarn_form" do
-#   erb :delete_yarn_form
-# end
-#
-# get "/delete_yarn" do
-#   Yarn.delete_row
-# end
+# Updates the item in the appropriate table of the database
+get "/edit_item" do
+  #stuff
+  #TODO
+  erb :"success"
+end
+
+get "/delete_yarn" do
+  #stuff
+  #TODO
+  erb :"success"
+end
+
+get "/delete_location" do
+  #stuff
+  #TODO
+  erb :"success"
+end
+
+get "/delete_weight" do
+  #stuff
+  #TODO
+  erb :"success"
+end
+
+get "/search_by_weight" do
+  #stuff
+  #TODO
+end
+
+get "/search_by_location" do
+  #stuff
+  #TODO
+end
+
+
+
+
 
 
