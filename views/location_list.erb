@@ -1,5 +1,7 @@
 <h3>Choose a Location to Search</h3>
 
+  <p><form action= "/search_by_location">
+
   <% StoreLocation.all.each do |item| %>
   <p><input type="radio" name="store_location" value="<% "#{item.id}" %>"><%= "\s#{item.id}. #{item.store_location}" %></p>
   <% end %>

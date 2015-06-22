@@ -1,0 +1,13 @@
+<h3>Which Yarn Would You Like To Delete?</h3>
+
+<form action= "/delete_yarn">
+  
+  <% Yarn.all.each do |item| %>
+    <p><%= "#{item.id}. #{item.brand} #{item.name}: #{item.color} #{item.fiber}, $#{item.price} #{item.skeins} skeins" %></p>
+  <% end %>
+  
+  
+  
+<p><a href = "/home">Return To Main Menu</a><p>
+  
+  

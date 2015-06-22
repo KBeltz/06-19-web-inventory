@@ -1,0 +1,8 @@
+  
+  
+  <% chosen_location = params["x"] %>
+  <% location_hash = Yarn.where("store_location_id", chosen_location.to_i) %>
+  
+  <% location_hash.each do |location| %>
+    <%= "#{location_hash['id']} - #{location_hash['brand']} #{location_hash['name']}: #{location_hash['color']}, $#{location_hash['price']}, #{location_hash['skeins']} skeins" %>
+  <% end %>
