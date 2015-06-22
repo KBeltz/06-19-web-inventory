@@ -1,6 +1,6 @@
-<h4>Store Inventory for <%= @location_instance.store_location %> Location</h4>
+<h4>Store Inventory for <%= @specific_location.store_location %> Location</h4>
   
-<% @products_in_location.each do |item|  %>
+<% @yarn_at_store.each do |item|  %>
   <p> <%="Brand: #{item.brand}, Name: #{item.name}, Color: #{item.color}, Fiber: #{item.fiber}, Price: $#{item.price}, Quantity: #{item.skeins} skeins"%> </p>
 <%end%>
     

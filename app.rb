@@ -69,8 +69,8 @@ get "/weight_list" do
 end
 
 get "/search_by_weight/:x" do
-  @weight_instance = Weight.find(params["x"])
-  @products_in_category = Yarn.where("weight_id", params["x"])
+  @weight_category = Weight.find(params["x"])
+  @yarn_in_category = Yarn.where("weight_id", params["x"])
   erb :"search_by_weight"
 end
 
@@ -80,8 +80,8 @@ get "/location_list" do
 end
 
 get "/search_by_location/:x" do
-  @location_instance = StoreLocation.find(params["x"])
-  @products_in_location = Yarn.where("store_location_id", params["x"])
+  @specific_location = StoreLocation.find(params["x"])
+  @yarn_at_store = Yarn.where("store_location_id", params["x"])
   erb :"search_by_location"
 end
 
