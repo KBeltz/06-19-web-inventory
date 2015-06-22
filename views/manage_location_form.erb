@@ -11,7 +11,9 @@
 
   <p> <input type="submit" value="edit location"></p>
 </form>
+
 <br><br>
+
 <h3> Add New Store Location</h3>
 
 <form action= "/add_store_location">
@@ -19,6 +21,19 @@
 
   <input type="submit" value="add location">
 </form></p>
+
+<br><br>
+
+<h3>Delete Store Location</h3>
+
+<form action= "/delete_location">
+  <p><h4>Choose a location to delete:</h4><select name="id"></p>
+  <% StoreLocation.all.each do |item| %>
+      <option value="<%= item.id %>"><%= item.store_location %></option>
+      <% end %>
+    </select>
+  <p> <input type="submit" value="delete location"></p>
+</form>
 
 <br><br>
 <a href = "/home">Return To Main Menu</a>

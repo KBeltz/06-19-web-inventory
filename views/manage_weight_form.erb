@@ -11,7 +11,9 @@
 
   <p> <input type="submit" value="edit weight"></p>
 </form>
+
 <br><br>
+
 <h3> Add New Weight Category</h3>
 
 <form action= "/add_weight">
@@ -19,6 +21,19 @@
 
   <input type="submit" value="add weight">
 </form></p>
+
+<br><br>
+
+<h3>Delete Weight Category</h3>
+
+<form action= "/delete_weight">
+  <p><h4>Choose a weight category to delete:</h4><select name="id"></p>
+  <% Weight.all.each do |item| %>
+      <option value="<%= item.id %>"><%= item.weight %></option>
+      <% end %>
+    </select>
+  <p> <input type="submit" value="delete category"></p>
+</form>
 
 <br><br>
 <a href = "/home">Return To Main Menu</a>
