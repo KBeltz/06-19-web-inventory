@@ -89,61 +89,6 @@ end
 
 ###########################################################################
 
-#TODO still need to list yarns so the user can pick which yarn to edit
-get "/edit_yarn_name_form/:x" do
-  erb :"edit_yarn_name_form"
-end
-
-get "/edit_yarn_name" do
-  # `params` stores information from the form's submitted information.
-  # So right now, `params` is {"x" => "3", "name" => "Marlene"} (for example).
-  
-  # student = Student.find_as_object(params["x"].to_i)
-  # student.name = params["name"]
-  # student.save
-end
-
-#TODO still need to list yarns so the user can pick which yarn to edit
-get "/edit_yarn_quantity_form/:x" do
-  erb :"edit_yarn_quantity_form"
-end
-
-get "/edit_yarn_quantity" do
-  # `params` stores information from the form's submitted information.
-  # So right now, `params` is {"x" => "3", "name" => "Marlene"} (for example).
-  
-  # student = Student.find_as_object(params["x"].to_i)
-  # student.name = params["name"]
-  # student.save
-end
-
-#TODO still need to list yarns so the user can pick which yarn to edit
-get "/edit_yarn_location_form/:x" do
-  erb :"edit_yarn_location_form"
-end
-
-get "/edit_yarn_location" do
-  # `params` stores information from the form's submitted information.
-  # So right now, `params` is {"x" => "3", "name" => "Marlene"} (for example).
-  
-  # student = Student.find_as_object(params["x"].to_i)
-  # student.name = params["name"]
-  # student.save
-end
-
-#TODO still need to list yarns so the user can pick which yarn to edit
-get "/edit_yarn_price_form/:x" do
-  erb :"edit_yarn_price_form"
-end
-
-get "/edit_yarn_price" do
-  # `params` stores information from the form's submitted information.
-  # So right now, `params` is {"x" => "3", "name" => "Marlene"} (for example).
-  
-  # student = Student.find_as_object(params["x"].to_i)
-  # student.name = params["name"]
-  # student.save
-end
 
 get "/search_by_location" do
   erb :"search_by_location"
