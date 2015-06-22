@@ -13,6 +13,7 @@ Choose product to edit.
   
   <p>New Brand: <input type="text" placeholder="Brand" name="brand"></p>
   <p>New Yarn Name: <input type="text" placeholder="Name" name="brand"></p>
+  <p>New Unit Price: $<input type="number" min="0.01" step="0.01" name= "price" placeholder="Price">
   <p>Change Weight Category: <select name="weight_id"></p>
     <option></option>
     <% Weight.all.each do |weight| %>
