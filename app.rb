@@ -135,7 +135,6 @@ get "/delete_location/:x" do
   erb :"success"
 end
 
-
 get "/delete_weight/:x" do
   @weight_category = Weight.find(params["x"])
   @weight_category.delete_row
@@ -143,17 +142,79 @@ get "/delete_weight/:x" do
   erb :"success"
 end
 
-#########################################################################
-# TODO items below
-#########################################################################
-
-# Gets parameters from edit_inventory_item_form, manage_location_form, or 
-# the manage_weight_form
+# Gets parameters from edit_inventory_item_form
 #
 # Updates the item in the appropriate table of the database
 get "/edit_item" do
-  #stuff
-  #TODO
+  @new_yarn = Yarn.find(params["id"])
+  
+  if !params["brand"].empty?
+    @new_yarn.brand = params["brand"]
+  end
+
+  if !params["name"].empty?
+    @new_yarn.name = params["name"]
+  end
+  
+  if !params["color"].empty?
+    @new_yarn.color = params["color"]
+  end
+  
+  if !params["fiber"].empty?
+    @new_yarn.fiber = params["fiber"]
+  end
+
+  if !params["price"].empty?
+    @new_yarn.price = params["price"]
+  end
+  
+  if !params["skeins"].empty?
+    @new_yarn.skeins = params["skeins"]
+  end
+  
+  if !params["weight_id"].empty?
+    @new_yarn.weight_id = params["weight_id"]
+  end
+  
+  if !params["store_location_id"].empty?
+    @new_yarn.store_location_id = params["store_location_id"].to_i
+  end
+  
+  # Save edited yarn to database
+  @new_yarn.save
+  
+  erb :"success"
+end
+
+# Gets parameters from manage_weight_form
+#
+# Updates the item in the appropriate table of the database
+get "/edit_weight" do
+  @new_weight = Weight.find(params["id"])
+  
+  if !params["weight"].empty?
+    @new_weight.weight = params["weight"]
+  end
+  
+  # Save edited yarn to database
+  @new_weight.save
+  
+  erb :"success"
+end
+
+# Gets parameters from manage_location_form
+#
+# Updates the item in the appropriate table of the database
+get "/edit_location" do
+  @new_location = StoreLocation.find(params["id"])
+  
+  if !params["store_location"].empty?
+    @new_location.store_location = params["store_location"]
+  end
+  
+  # Save edited yarn to database
+  @new_location.save
+  
   erb :"success"
 end
 
