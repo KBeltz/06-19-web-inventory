@@ -1,7 +1,11 @@
-<h3>Choose a Weight Category to Search</h3>
+<h3>Search By Weight Category</h3>
 
+  <p><form action= "/search_by_weight">
+
+  <p><h4>Choose a weight category to search:</h4><select name="id"></p>
   <% Weight.all.each do |item| %>
-  <p><input type="radio" name="weight" value="<% "#{item.id}" %>"><%= "\s#{item.id}. #{item.weight}" %></p>
-  <% end %>
-
-<p><input type="submit"></p>
+      <option value="<%= item.id %>"><%= item.weight %></option>
+      <% end %>
+    </select>
+  <p> <input type="submit" value="search category"></p>
+</form>

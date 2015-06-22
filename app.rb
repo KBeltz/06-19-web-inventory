@@ -106,19 +106,19 @@ get "/add_store_location" do
 end
 
 ###########################################################################
-
-
-get "/search_by_location" do
-  erb :"search_by_location"
-  # doesn't quite work. Returns a blank screen.
-end
-
-get "/delete_yarn_form" do
-  erb :delete_yarn_form
-end
-
-get "/delete_yarn" do
-  Yarn.delete_row
-end
+#
+#
+# get "/search_by_location" do
+#   erb :"search_by_location"
+#   # doesn't quite work. Returns a blank screen.
+# end
+#
+# get "/delete_yarn_form" do
+#   erb :delete_yarn_form
+# end
+#
+# get "/delete_yarn" do
+#   Yarn.delete_row
+# end
 
 

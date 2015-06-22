@@ -1,9 +1,11 @@
-<h3>Choose a Location to Search</h3>
+<h3>Search By Store Location</h3>
 
   <p><form action= "/search_by_location">
 
+  <p><h4>Choose a location to search:</h4><select name="id"></p>
   <% StoreLocation.all.each do |item| %>
-  <p><input type="radio" name="store_location" value="<% "#{item.id}" %>"><%= "\s#{item.id}. #{item.store_location}" %></p>
-  <% end %>
-
-<p><input type="submit"></p>
+      <option value="<%= item.id %>"><%= item.store_location %></option>
+      <% end %>
+    </select>
+  <p> <input type="submit" value="search location"></p>
+</form>
