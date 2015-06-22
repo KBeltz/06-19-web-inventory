@@ -1,11 +1,11 @@
 <h3>Search By Store Location</h3>
 
-  <p><form action= "/search_by_location">
-
-  <p><h4>Choose a location to search:</h4><select name="id"></p>
+  <p><h4>Choose a location to search:</h4></p>
   <% StoreLocation.all.each do |item| %>
-      <option value="<%= item.id %>"><%= item.store_location %></option>
-      <% end %>
-    </select>
-  <p> <input type="submit" value="search location"></p>
-</form>
+  <ul>
+    <li><a href="/search_by_location/<%= item.id %>"><%= item.id %>. <%= item.store_location %></a></li>
+  </ul>
+  <% end %>
+<br><br>
+    
+<a href="/home">Return to Main Menu</a>

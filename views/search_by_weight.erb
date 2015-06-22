@@ -1,6 +1,6 @@
-<h4>Store Inventory for <%= @location_instance.store_location %> Location</h4>
+<h4>Weight Category Search for <%= @weight_instance.weight %> Weight Yarn</h4>
   
-<% @products_in_location.each do |item|  %>
+<% @products_in_category.each do |item|  %>
   <p> <%="Brand: #{item.brand}, Name: #{item.name}, Color: #{item.color}, Fiber: #{item.fiber}, Price: $#{item.price}, Quantity: #{item.skeins} skeins"%> </p>
 <%end%>
     

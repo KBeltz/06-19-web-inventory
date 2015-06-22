@@ -68,9 +68,21 @@ get "/weight_list" do
   erb :"weight_list"
 end
 
+get "/search_by_weight/:x" do
+  @weight_instance = Weight.find(params["x"])
+  @products_in_category = Yarn.where("weight_id", params["x"])
+  erb :"search_by_weight"
+end
+
 # Returns a list of all locations.
 get "/location_list" do
   erb :"location_list"
+end
+
+get "/search_by_location/:x" do
+  @location_instance = StoreLocation.find(params["x"])
+  @products_in_location = Yarn.where("store_location_id", params["x"])
+  erb :"search_by_location"
 end
 
 # form for user to enter information to add product to inventory
@@ -136,17 +148,6 @@ get "/delete_weight" do
   #TODO
   erb :"success"
 end
-
-get "/search_by_weight" do
-  #stuff
-  #TODO
-end
-
-get "/search_by_location" do
-  #stuff
-  #TODO
-end
-
 
 
 
