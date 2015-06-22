@@ -38,17 +38,17 @@ get "/manage_inventory" do
   erb :"manage_inventory"
 end
 
-# edit inventory item menu
+# edit inventory item form
 get "/edit_inventory_item_form" do
   erb :"edit_inventory_item_form"
 end
 
-# location management menu
+# location management form
 get "/location" do
   erb :"manage_location_form"
 end
 
-# weight management menu
+# weight management form
 get "/weight" do
   erb :"manage_weight_form"
 end
