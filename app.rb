@@ -68,6 +68,11 @@ get "/location_list" do
   erb :"location_list"
 end
 
+# form for user to enter information to add product to inventory
+get "/add_yarn_form" do
+  erb :"add_yarn_form"
+end
+
 # Gets parameters from add_yarn_form.
 #
 # Adds product to yarns table
@@ -136,18 +141,10 @@ get "/edit_yarn_price" do
   # student.save
 end
 
-
 get "/search_by_location" do
   erb :"search_by_location"
   # doesn't quite work. Returns a blank screen.
 end
-
-# form for user to enter information to add product to inventory
-get "/add_yarn_form" do
-  erb :"add_yarn_form"
-end
-
-
 
 get "/delete_yarn_form" do
   erb :delete_yarn_form
