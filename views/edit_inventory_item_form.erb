@@ -1,15 +1,13 @@
 <h3>Edit Inventory Item</h3>
-
-Choose product to edit.
    
 <form action="/edit_save">
-  <p> Choose a product to edit : <select name="id"></p>
+  <p><h4>Choose a product to edit:</h4><select name="id"></p>
     <% Yarn.all.each do |item| %>
-    <option value="<%= item.id %>"> <%= item.brand %> - <%= item.name %>: <%= item.color %> </option>
+    <option value="<%= item.id %>"> <%= item.brand %> - <%= item.name %>: <%= item.color %></option>
     <% end %>
   </select>
   
-  <p>Enter new item info. If field does not need to be updated, leave blank.</p>
+  <p><h4>Enter new item info. If field does not need to be updated, leave blank.</h4></p>
   
   <p>New Brand: <input type="text" placeholder="Brand" name="brand"></p>
   <p>New Yarn Name: <input type="text" placeholder="Name" name="brand"></p>
