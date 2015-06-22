@@ -1,0 +1,13 @@
+<h3>Edit Store Location</h3>
+
+<form action="/edit_save">
+  <p><h4>Choose a location to edit:</h4><select name="id"></p>
+    <% StoreLocation.all.each do |item| %>
+    <option value="<%= item.id %>"> <%= item.store_location %></option>
+    <% end %>
+  </select>
+  
+  <p>New Name: <input type="text" placeholder="Location Name" name="store_location"></p>
+
+  <p> <input type="submit" value="edit location"></p>
+</form>

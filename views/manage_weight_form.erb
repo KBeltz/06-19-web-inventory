@@ -1,0 +1,13 @@
+<h3>Edit Weight Category</h3>
+
+<form action="/edit_save">
+  <p><h4>Choose a weight category to edit:</h4><select name="id"></p>
+    <% Weight.all.each do |item| %>
+    <option value="<%= item.id %>"> <%= item.weight %></option>
+    <% end %>
+  </select>
+  
+  <p>New Weight Name: <input type="text" placeholder="Weight Name" name="weight"></p>
+
+  <p> <input type="submit" value="edit weight"></p>
+</form>

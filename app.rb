@@ -45,12 +45,12 @@ end
 
 # location management menu
 get "/location" do
-  erb :"manage_location"
+  erb :"manage_location_form"
 end
 
 # weight management menu
 get "/weight" do
-  erb :"manage_weight"
+  erb :"manage_weight_form"
 end
 
 # search menu
