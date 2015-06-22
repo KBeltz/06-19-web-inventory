@@ -33,26 +33,53 @@ get "/home" do
   erb :"index"
 end
 
+# inventory management menu
 get "/manage_inventory" do
   erb :"manage_inventory"
 end
 
+# location management menu
 get "/location" do
   erb :"manage_location"
 end
 
+# weight management menu
 get "/weight" do
   erb :"manage_weight"
 end
 
+# search menu
 get "/search" do
   erb :"search"
 end
 
-# Returns a list of all products.
+# Returns a list of all products in the yarns table.
 get "/view" do
   erb :"view"
 end
+
+# Returns a list of all weights.
+get "/weight_list" do
+  erb :"weight_list"
+end
+
+# Returns a list of all locations.
+get "/location_list" do
+  erb :"location_list"
+end
+
+# Gets parameters from add_yarn_form.
+#
+# Adds product to yarns table
+get "/add_yarn" do
+  Yarn.add("brand" => params["brand"], "name" => params["name"], "yards" => params["yards"], "fiber" => params["fiber"], "color" => params["color"], "price" => params["price"], "skeins" => params["skeins"], "weight_id" => params["weight_id"], "store_location_id" => params["store_location_id"])
+  
+  erb :"success"
+end
+###########################################################################
+# stuff that works and is probably finished ^^
+# stuff that needs work is below
+###########################################################################
 #TODO still need to list yarns so the user can pick which yarn to edit
 get "/edit_yarn_name_form/:x" do
   erb :"edit_yarn_name_form"
@@ -109,15 +136,6 @@ get "/edit_yarn_price" do
   # student.save
 end
 
-# Returns a list of all weights.
-get "/weight_list" do
-  erb :"weight_list"
-end
-
-# Returns a list of all locations.
-get "/location_list" do
-  erb :"location_list"
-end
 
 get "/search_by_location" do
   erb :"search_by_location"
@@ -129,9 +147,7 @@ get "/add_yarn_form" do
   erb :"add_yarn_form"
 end
 
-get "/add_yarn" do
-  Yarn.add("brand" => brand, "name" => name, "yards" => yards, "fiber" => fiber, "color" => color, "price" => price, "skeins" => skeins, "weight_id" => weight_id, "store_location_id" => store_location_id)
-end
+
 
 get "/delete_yarn_form" do
   erb :delete_yarn_form
