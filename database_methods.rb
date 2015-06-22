@@ -6,6 +6,7 @@ require "active_support/inflector"
 # that will become **class** methods for the class.
  
 module DatabaseMethods
+  
   # Get all of the rows for a table.
   #
   # Returns an Array containing Hashes for each row.
@@ -23,6 +24,7 @@ module DatabaseMethods
     
     return results_as_objects
   end
+  
   # find - Use this method to find a 
   # product based on the ID in database.
   #
@@ -46,6 +48,7 @@ module DatabaseMethods
      
     self.new(result)
   end
+  
   # sort - call to database to sort table by column name in descending order.
   #
   # Returns an Array of Objects
@@ -61,6 +64,7 @@ module DatabaseMethods
     
     return results_as_objects
   end
+  
   # sort - call to database to sort table by column name in ascending order.
   #
   # Returns an Array of Objects
@@ -83,7 +87,6 @@ module DatabaseMethods
   # => [234343 name: Chair brand: Spring category_id: 3 quantity: 4]
   # 
   # Returns an Array of Objects
- 
   def where(column_name, column_id)
     table_name = self.to_s.pluralize.underscore
     results = DATABASE.execute("SELECT * FROM #{table_name} WHERE #{column_name} = #{column_id};")

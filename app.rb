@@ -130,16 +130,28 @@ end
 
 get "/delete_location/:x" do
   @specific_location = StoreLocation.find(params["x"])
-  @specific_location.delete_row
+  @yarn_at_store = Yarn.where("store_location_id", params["x"])
   
-  erb :"success"
+  if @yarn_at_store.empty?
+    @specific_location.delete_row
+  
+    erb :"success"
+  else
+    erb :"delete_location_error"
+  end
 end
 
 get "/delete_weight/:x" do
   @weight_category = Weight.find(params["x"])
-  @weight_category.delete_row
+  @yarn_in_category = Yarn.where("weight_id", params["x"])
   
-  erb :"success"
+  if @yarn_in_category.empty?
+    @weight_category.delete_row
+    
+    erb :"success"
+  else
+    erb :"category_error"
+  end
 end
 
 # Gets parameters from edit_inventory_item_form
