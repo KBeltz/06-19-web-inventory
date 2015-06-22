@@ -86,10 +86,9 @@ get "/add_yarn" do
   
   erb :"success"
 end
+
 ###########################################################################
-# stuff that works and is probably finished ^^
-# stuff that needs work is below
-###########################################################################
+
 #TODO still need to list yarns so the user can pick which yarn to edit
 get "/edit_yarn_name_form/:x" do
   erb :"edit_yarn_name_form"
