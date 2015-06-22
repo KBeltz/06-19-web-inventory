@@ -1,0 +1,13 @@
+<h3>Delete Yarn Item From Inventory</h3>
+
+  <p><h4>Choose an item to delete:</h4></p>
+  <% Yarn.all.each do |item| %>
+    <ul>
+      <li><a href="/delete_yarn/<%= item.id %>"><%= item.brand %> - <%= item.name %>, Colorway: <%= item.color %>, Fiber: <%= item.fiber %>, Price: $<%= item.price %>, Quantity: <%= item.skeins %> skeins</a></li>
+    </ul>
+      <% end %>
+
+<br><br>  
+<p><a href = "/home">Return To Main Menu</a><p>
+  
+  

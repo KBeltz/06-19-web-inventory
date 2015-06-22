@@ -117,6 +117,17 @@ get "/add_store_location" do
   erb :"success"
 end
 
+get "/delete_yarn" do
+  erb :"delete_yarn"
+end
+
+get "/delete_yarn/:x" do
+  @specific_yarn = Yarn.find(params["x"])
+  @specific_yarn.delete_row
+  
+  erb :"success"
+end
+
 #########################################################################
 # TODO items below
 #########################################################################
@@ -126,12 +137,6 @@ end
 #
 # Updates the item in the appropriate table of the database
 get "/edit_item" do
-  #stuff
-  #TODO
-  erb :"success"
-end
-
-get "/delete_yarn" do
   #stuff
   #TODO
   erb :"success"
